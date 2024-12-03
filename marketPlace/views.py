@@ -4,3 +4,6 @@ from django.shortcuts import render
 # Create your views here.
 def index(request):
     return render(request, 'marketPlace/index.html')
+
+def contact(requst):
+    return render(requst, 'marketPlace/contact.html')
