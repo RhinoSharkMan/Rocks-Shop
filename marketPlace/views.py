@@ -3,6 +3,7 @@ from unicodedata import category
 from django.shortcuts import render
 from item.models import Category, Item
 # from django.http import HttpResponse
+from .forms import SignupForm
 
 # Create your views here.
 def index(request):
@@ -15,3 +16,10 @@ def index(request):
 
 def contact(requst):
     return render(requst, 'marketPlace/contact.html')
+
+def signup(request):
+    form = SignupForm
+
+    return render(request, 'marketPlace/signup.html', {
+        'form': form
+    })
