@@ -1,21 +1,21 @@
 {% extends 'marketPlace/base.html' %}
 {% block title %}
-    Sign Up - My Website
+    Login - My Website
 {% endblock %}
 
 {% block content %}
-    <h2>Sign Up</h2>
+    <h2>Login</h2>
     <form method="post">
         {% csrf_token %}
-        <!-- Display form errors -->
+
         {% if form.errors %}
             <div class="alert alert-danger">
                 {{ form.errors }}
             </div>
         {% endif %}
-        <!-- Render form fields -->
+
         {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Sign Up</button>
+        <button type="submit" class="btn btn-primary">Login</button>
     </form>
-    <p>Already have an account? <a href="{% url 'marketPlace:login' %}">Login here</a>.</p>
+    <p>Don't have an account? <a href="{% url 'marketPlace:signup' %}">Sign up here</a>.</p>
 {% endblock %}
