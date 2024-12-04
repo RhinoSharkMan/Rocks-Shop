@@ -14,8 +14,8 @@ def index(request):
         'items':items,
     })
 
-def contact(requst):
-    return render(requst, 'marketPlace/contact.html')
+def contact(request):
+    return render(request, 'marketPlace/contact.html')
 
 def signup(request):
     if request.method == 'POST':
@@ -31,3 +31,6 @@ def signup(request):
     return render(request, 'marketPlace/signup.html', {
         'form': form
     })
+
+def about(request):
+    return render(request, 'marketPlace/about.html')
