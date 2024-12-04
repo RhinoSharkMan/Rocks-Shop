@@ -2,8 +2,9 @@ from unicodedata import category
 
 from django.shortcuts import render, redirect
 from item.models import Category, Item
-# from django.http import HttpResponse
+from django.http import HttpResponseNotAllowed
 from .forms import SignupForm
+from django.contrib.auth import logout
 
 # Create your views here.
 def index(request):
@@ -31,3 +32,13 @@ def signup(request):
     return render(request, 'marketPlace/signup.html', {
         'form': form
     })
+
+def about(request):
+    return render(request, 'marketPlace/about.html')
+
+def logout_view(request):
+    if request.method == "POST":
+        logout(request)  # Log out the user
+        return redirect('marketPlace:login')  # Redirect to login page
+    else:
+        return HttpResponseNotAllowed(['POST'])  # Return 405 if method is not POST

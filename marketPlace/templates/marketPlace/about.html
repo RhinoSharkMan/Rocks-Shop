@@ -1,0 +1,36 @@
+{% extends 'marketPlace/base.html' %}
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+<div class="max-w-3xl mx-auto mt-10">
+    <h1 class="text-3xl font-bold mb-6">About Us</h1>
+    <p class="text-lg leading-relaxed mb-4">
+        Welcome to the one stop Rockshop! We are dedicated to providing professional quality climbing gear at affordable prices.
+    </p>
+    <p class="text-lg leading-relaxed mb-4">
+        Our mission is to provide the service we would want from a small-scale rock climbing gear store. We strive to always put the customer first!
+    </p>
+    <!-- Add more content as needed -->
+    <h2 class="text-2xl font-bold mt-8 mb-4">Our Team</h2>
+    <p class="text-lg leading-relaxed mb-4">
+        Meet the people behind the project:
+    </p>
+    <!-- Example team members -->
+    <ul class="list-disc list-inside">
+        <li class="mb-2">
+            <strong>Liam Knap</strong> - Co-Founder and Developer
+        </li>
+        <li class="mb-2">
+            <strong>Joshua O'Brien</strong> - Co-Founder and Developer
+        </li>
+        <li class="mb-2">
+            <strong>Matthew Kelleck</strong> - Co-Founder and Developer
+        </li>
+    </ul>
+    <h2 class="text-2xl font-bold mt-8 mb-4">Contact Us</h2>
+    <p class="text-lg leading-relaxed mb-4">
+        If you have any questions or feedback, feel free to <a href="{% url 'marketPlace:contact' %}" class="text-blue-500 hover:text-blue-700">contact us</a>.
+    </p>
+</div>
+{% endblock %}
