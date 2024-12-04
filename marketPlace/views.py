@@ -1,6 +1,6 @@
 from unicodedata import category
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from item.models import Category, Item
 # from django.http import HttpResponse
 from .forms import SignupForm
@@ -18,7 +18,15 @@ def contact(requst):
     return render(requst, 'marketPlace/contact.html')
 
 def signup(request):
-    form = SignupForm
+    if request.method == 'POST':
+        form= SignupForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+
+            return redirect('/login/')
+    else:
+        form = SignupForm
 
     return render(request, 'marketPlace/signup.html', {
         'form': form
